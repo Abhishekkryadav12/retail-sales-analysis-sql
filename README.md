@@ -1,68 +1,68 @@
 # Retail Sales Analysis - SQL Project
 
-This project uses SQL to clean, explore, and analyze retail transaction data. It answers practical business questions about sales performance, customer behavior, product categories, and order timing.
+The project cleans, explores and analyses retail transaction data using SQL, and it provides answers to real business questions concerning sales performance, customer behaviour, product categories and order timing.
 
 ## Project overview
 
-The analysis is written for PostgreSQL and uses a dataset of **2,000 retail transactions** recorded between **January 2022 and December 2023**. The dataset contains sales from three product categories: Clothing, Beauty, and Electronics.
+The analysis is aimed at PostgreSQL and is based on a dataset consisting of **2,000 retail transactions** which were recorded between **January 2022 and December 2023**. This dataset includes sales from three product categories: Clothing, Beauty, and Electronics.
 
 ## Repository contents
 
 | File | Description |
 | --- | --- |
-| `SQL - Retail Sales Analysis_utf .csv` | Source retail transaction dataset. |
-| `sql_query_p1.sql` | Database setup, data-quality checks, exploratory queries, and business analysis queries. |
+| `SQL - Retail Sales Analysis_utf .csv` | Source retail sales transaction data. |
+| `sql_query_p1.sql` | Sets up the database, checks data quality, runs exploratory queries, and carries out business analysis queries. |
 
 ## Dataset columns
 
 | Column | Description |
 | --- | --- |
-| `transaction_id` | Unique identifier for each transaction. |
-| `sale_date` | Date of the sale. |
-| `sale_time` | Time of the sale. |
-| `customer_id` | Unique customer identifier. |
+| `transaction_id` | Unique ID for each transaction. |
+| sale_date | The date on which the sale took place. |
+| sale_time | The time at which the sale takes place. |
+| `customer_id` | Unique number that identifies a customer. |
 | `gender` | Customer gender. |
 | `age` | Customer age. |
-| `category` | Product category. |
-| `quantity` | Number of units purchased. |
+| `category` | Product type. |
+| quantity | The number of units that were purchased. |
 | `price_per_unit` | Price for one unit. |
-| `cogs` | Cost of goods sold. |
-| `total_sale` | Total transaction amount. |
+| cogs | The cost of goods sold. |
+| `total_sale` | Total amount of the transaction. |
 
-> Note: the CSV header uses `transactions_id` and `quantiy`; map these to `transaction_id` and `quantity` when importing the file.
+Note that when importing the file you should map `transactions_id` and `quantiy` to `transaction_id` and `quantity`.
 
 ## Database setup
 
-1. Create a PostgreSQL database:
+1. Make a PostgreSQL database.
 
 ```sql
 CREATE DATABASE sql_project_p2;
 ```
 
-2. Connect to `sql_project_p2` and run the table-creation section in `sql_query_p1.sql`.
+2. Establish a connection to sql_project_p2 and execute the table-creation section in the file sql_query_p1.sql.
 
-3. Import `SQL - Retail Sales Analysis_utf .csv` into the `retail_sales` table. Ensure the two CSV header names noted above are mapped to the table column names.
+3. Import the file SQL - Retail Sales Analysis_utf .csv into the retail_sales table and make sure that the two CSV header names mentioned above are assigned to the corresponding table columns.
 
-4. Run the remaining statements in `sql_query_p1.sql` to perform data cleaning, exploration, and analysis.
+4. Carry out the data cleaning, exploration and analysis by executing the remaining statements in the file sql_query_p1.sql.
 
 ## Analysis performed
 
 The SQL script answers the following business questions:
 
-1. Retrieve all sales made on a specific date.
-2. Find Clothing transactions in November 2022 with qualifying quantities.
-3. Calculate total sales and order count by product category.
-4. Find the average age of Beauty-category customers.
-5. Identify high-value transactions above 1,000.
-6. Count transactions by gender and category.
-7. Find the best-selling month in each year based on average sale value.
-8. Identify the top five customers by total spending.
-9. Count unique customers in each product category.
-10. Classify orders into Morning, Afternoon, and Evening shifts and count each shift's orders.
+1. Get all sales from a certain date.
+2. Identify the clothing transactions from November 2022 that had qualifying quantities.
+3. Work out the total sales and the number of orders by product category.
+4. Calculate the average age of the customers in the Beauty category.
+5. Find transactions over 1,000 that are especially important.
+6. Count the number of transactions by gender and by category.
+7. Determine, for each year, the month that has the highest average sale value.
+8. Find the five customers who have spent the most in total.
+9. Count the number of unique customers in each product category.
+10. Divide the orders into morning, afternoon, and evening shifts and then count the orders for each shift.
 
 ## Data-quality checks
 
-Before analysis, the script checks for missing values in key transaction fields and includes a query to remove incomplete records. It also explores total transaction count, unique customers, and available categories.
+Before carrying out the analysis, the script looks for any missing values in the key transaction fields and includes a query to eliminate the incomplete records. It also examines the total number of transactions, the number of unique customers, and the available categories.
 
 ## Dataset snapshot
 
